@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TiendaOnline - Tu mercado en línea</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="logo">
+                        <i class="fas fa-store"></i>
+                        <span>TiendaOnline</span>
+                    </div>
+                    <div class="search-bar">
+                        <input type="text" id="searchInput" placeholder="Buscar productos, marcas y más...">
+                        <button class="search-btn" id="searchBtn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="header-actions">
+                        <a href="#" class="action-link" id="cartLink">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Carrito</span>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </a>
+                        <a href="#" class="action-link">
+                            <i class="fas fa-user"></i>
+                            <span>Mi cuenta</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar">
+            <div class="container">
+                <ul class="nav-menu">
+                    <li><a href="#" class="nav-link active">Inicio</a></li>
+                    <li><a href="#" class="nav-link" data-category="electronics">Electrónica</a></li>
+                    <li><a href="#" class="nav-link" data-category="clothing">Ropa</a></li>
+                    <li><a href="#" class="nav-link" data-category="home">Hogar</a></li>
+                    <li><a href="#" class="nav-link" data-category="sports">Deportes</a></li>
+                    <li><a href="#" class="nav-link" data-category="books">Libros</a></li>
+                    <li><a href="#" class="nav-link" data-category="toys">Juguetes</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Encuentra lo que buscas</h1>
+                <p>Millones de productos nuevos y usados a los mejores precios</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Filters -->
+            <div class="filters-section">
+                <div class="filter-group">
+                    <label>Ordenar por:</label>
+                    <select id="sortSelect">
+                        <option value="default">Relevancia</option>
+                        <option value="price-low">Precio: menor a mayor</option>
+                        <option value="price-high">Precio: mayor a menor</option>
+                        <option value="newest">Más recientes</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Precio:</label>
+                    <input type="range" id="priceRange" min="0" max="1000" value="1000">
+                    <span id="priceValue">Hasta $1000</span>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-section">
+                <h2 class="section-title" id="sectionTitle">Productos destacados</h2>
+                <div class="products-grid" id="productsGrid">
+                    <!-- Products will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Carrito de compras</h2>
+                <button class="close-btn" id="closeCart">&times;</button>
+            </div>
+            <div class="modal-body" id="cartItems">
+                <p class="empty-cart">Tu carrito está vacío</p>
+            </div>
+            <div class="modal-footer">
+                <div class="cart-total">
+                    <strong>Total: $<span id="cartTotal">0.00</span></strong>
+                </div>
+                <button class="btn-primary" id="checkoutBtn">Proceder al pago</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Compra</h3>
+                    <ul>
+                        <li><a href="#">Registro</a></li>
+                        <li><a href="#">Ofertas del día</a></li>
+                        <li><a href="#">Cupones</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Vende</h3>
+                    <ul>
+                        <li><a href="#">Comenzar a vender</a></li>
+                        <li><a href="#">Cómo vender</a></li>
+                        <li><a href="#">Tarifas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Ayuda</h3>
+                    <ul>
+                        <li><a href="#">Centro de ayuda</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Preguntas frecuentes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TiendaOnline. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
